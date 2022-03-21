@@ -30,13 +30,16 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           height: double.infinity,
           color: MAIN_COLOR,
           child: Stack(children: [
-            Container(width: double.infinity, height: 250, child: _getImage()),
+            Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height / 2,
+                child: _getImage()),
             Positioned(
                 left: 0,
                 bottom: 0,
                 child: Container(
                     width: MediaQuery.of(context).size.width,
-                    height: 300,
+                    height: MediaQuery.of(context).size.height / 2.5,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
@@ -119,14 +122,14 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     switch (_currentImage) {
       case 1:
         return Image(
-            image: AssetImage('assets/images/chair3.png'), fit: BoxFit.contain);
+            image: AssetImage('assets/images/chair3.png'), fit: BoxFit.none);
       case 2:
         return Image(
-            image: AssetImage('assets/images/chair2.png'), fit: BoxFit.contain);
+            image: AssetImage('assets/images/chair2.png'), fit: BoxFit.none);
       case 3:
       default:
         return Image(
-            image: AssetImage('assets/images/chair1.png'), fit: BoxFit.contain);
+            image: AssetImage('assets/images/chair1.png'), fit: BoxFit.none);
     }
   }
 }
