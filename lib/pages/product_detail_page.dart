@@ -39,7 +39,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                 bottom: 0,
                 child: Container(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height / 2.5,
+                    height: MediaQuery.of(context).size.height / 2,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
