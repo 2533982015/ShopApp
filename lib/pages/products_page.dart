@@ -1,4 +1,5 @@
 import 'package:comercial_app/data/products.dart';
+import 'package:comercial_app/pages/cart_page.dart';
 import 'package:comercial_app/pages/product_detail_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -23,9 +24,13 @@ class _ProductsPageState extends State<ProductsPage> {
           backgroundColor: Colors.white,
           elevation: 0,
           actions: [
-            Padding(
-                padding: const EdgeInsets.only(right: DEFAULT_PADDING),
-                child: Icon(Icons.shopping_bag_outlined, color: Colors.black))
+            GestureDetector(
+              onTap: _toCart,
+              child: Padding(
+                  padding: const EdgeInsets.only(right: DEFAULT_PADDING),
+                  child:
+                      Icon(Icons.shopping_bag_outlined, color: Colors.black)),
+            )
           ]),
       body: Container(
           padding: const EdgeInsets.all(DEFAULT_PADDING),
@@ -127,4 +132,7 @@ class _ProductsPageState extends State<ProductsPage> {
 
   void _toDetail() => Navigator.push(
       context, MaterialPageRoute(builder: (context) => ProductDetailPage()));
+
+  void _toCart() => Navigator.push(
+      context, MaterialPageRoute(builder: (context) => CartPage()));
 }
